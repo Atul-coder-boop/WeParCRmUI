@@ -12,7 +12,7 @@ export class CustomeridService {
 
   constructor(private http: HttpClient) {}
 
-  // Get Lead by ID
+  // Get Lead by ID IDD
   getLeadById(id: string): Observable<any> {
     const url = `${this.apiUrl}/GetLeadById/${id}`; // Correct API for fetching a lead by ID
     return this.http.get<any>(url).pipe(
