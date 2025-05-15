@@ -80,8 +80,9 @@ export class UpdateLoanApplicationComponent implements OnInit {
       const customerId = this.data.customer.customerId;  // getting the correct CustomerID
 
       // ✅ Correct API URL
-      const apiUrl = `http://localhost:82/api/Leads/UpdateLoanRequest?CustomerID=${encodeURIComponent(customerId)}`;
-
+      const apiUrl = `http://localhost:81/api/Leads/UpdateLoanRequest?CustomerID=${encodeURIComponent(customerId)}`;
+      //const apiUrl = `http://localhost:82/api/Leads/UpdateLoanRequest?CustomerID=${encodeURIComponent(customerId)}`;
+    
       this.isSubmitting = true;
 
       this.http.post(apiUrl, payload)

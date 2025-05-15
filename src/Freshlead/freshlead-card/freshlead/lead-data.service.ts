@@ -7,8 +7,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class LeadService {
-  private apiUrl = 'http://localhost:82/api/Leads/GetAllFreshLeads';
-
+  private apiUrl = 'http://localhost:81/api/Leads/GetAllFreshLeads';
+  //private apiUrl = 'http://localhost:82/api/Leads/GetAllFreshLeads';
+     
   constructor(private http: HttpClient) {}
 
   getAllLeads(): Observable<any[]> {

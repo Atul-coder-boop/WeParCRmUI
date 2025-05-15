@@ -128,13 +128,17 @@ getInitials(name: string): string {
     .join('')
     .toUpperCase();
 }
+
+
+ /* Add Addres deatls */
 customerId:string=this.route.snapshot.paramMap.get('id')!;
   displayedColumns: string[] = ['type', 'address', 'city', 'state', 'pincode','houseType','status','customerId'];
   addressList= new MatTableDataSource<any>();
   element:any[]=[this.addressList];
  
+ 
   loadAddresses(customerId:string): void {
-    const idd = this.route.snapshot.paramMap.get('id');
+    console.log(customerId);
     this.dialogservice.getAllAddressesById(customerId).subscribe({
       next: data => {
         const formatted = Array.isArray(data) ? data : [data];
@@ -147,13 +151,6 @@ customerId:string=this.route.snapshot.paramMap.get('id')!;
       }
     });
   }
-
-
-
-
-
- 
-
 
   addAddress() {
     const dialogRef = this.dialog.open(AddAddressDialogComponentComponent, {
@@ -184,6 +181,7 @@ customerId:string=this.route.snapshot.paramMap.get('id')!;
     });
   }
   
+  /**End */
 
 
 
