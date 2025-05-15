@@ -7,12 +7,12 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CustomeridService {
-  private apiUrl = 'http://localhost:81/api/Leads';
-  //private apiUrl = 'http://localhost:82/api/Leads';  // Correct base URL for Leads API
+  //private apiUrl = 'http://localhost:81/api/Leads';
+  private apiUrl = 'http://localhost:82/api/Leads';  // Correct base URL for Leads API
 
   constructor(private http: HttpClient) {}
 
-  // Get Lead by ID
+  // Get Lead by ID 
   getLeadById(id: string): Observable<any> {
     const url = `${this.apiUrl}/GetLeadById/${id}`; // Correct API for fetching a lead by ID
     return this.http.get<any>(url).pipe(
